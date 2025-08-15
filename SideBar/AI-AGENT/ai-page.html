@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../sidebar.css" rel="stylesheet" />
+    <link href="ai-page.css" rel="stylesheet" />
+    <title>AI-PAGE</title>
+
+</head>
+<body>
+    <div id="SIDE">
+        <form id="form">
+          <div class="profile-header">
+            <div class="frame" id="initials">P</div>
+          </div>
+
+          <div class="top-links">
+            <a href="../Dashboard/dashboard.html" class="options" target="_self">
+              <img src="../icons8-dashboard-layout-48.png" class="icons" />
+            </a>
+            <a href="ai-page.html" class="options active" target="_self">
+              <img src="../icons8-ai-48.png" class="icons" />
+            </a>
+            <a href="../book-lawyer/booklawyer.html" class="options">
+              <img src="../icons8-hiring-48.png" class="icons" />
+            </a>
+          </div>
+
+          <div class="bottom-links">
+            <a href="../profile/profile.html" class="options">
+              <img src="../icons8-profile-48.png" class="icons" />
+            </a>
+            <a href="../setting/setting.html" class="options">
+              <img src="../icons8-settings-48.png" class="icons" />
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Chat Display Container -->
+      <div class="chat-container">
+          <div class="message-area" id="messageArea">
+              
+          </div>
+      </div>
+
+      <!-- Original Input Wrapper -->
+      <div class="input-wrapper" style="margin-top: auto; border-radius: 20px;">
+          <textarea type="text" class="main-input" id="chatInput" placeholder="SAY HI TO OUR AGENT"></textarea>
+          
+          <label for="upload" class="icon-button" id="files">
+            <img src="icons8-plus-50.png" alt="Upload" />
+          </label>
+          <input type="file" id="upload" />
+
+          <button class="icon-button" onclick="alert('COMING SOON')">
+            <img src="icons8-mic-50.png" alt="Mic" />
+          </button>
+
+          <button class="icon-button" id="sendButton">
+            <img src="icons8-upload.gif" alt="Send" />
+          </button>
+      </div>
+
+      <div class="header">
+          <div class="logo-area">
+            <img src="hammer.png" alt="LawyerUP Logo" class="Image"/>
+            <span class="logo-text">LawyerUP</span>
+          </div>
+          <button class="top-button" onclick="location.reload()">New Chat</button>
+      </div>
+
+      <script src="ai.js"></script>
+</body>
+</html>
+
