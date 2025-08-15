@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <div id="login">
+        <img src="hammer.png" alt="hammer" id = "hammer">
+        <h3 id="name"><b>LawyerUP</b></h3>
+        
+      <form id="formone">
+          <h2 id="logname"><b>LOGIN</b></h2>
+          <input type="text" name="email" id="email" placeholder="E-mail" required>
+          <input type="password" name="password" id="password" placeholder="Password" required>
+          <p class="extra-options" id="forgot"><a href="#">Forgot Password?</a></p>
+          <button type="submit" id="button-one">Login</button>
+        
+          
+          <p class="extra" id="signup">No account? <a href="../Sign_up/signup.html" id="link" target="_self">Sign up</a></p>
+
+          <div class="divider" id="linediv"></div>
+
+     </form>
+     <div class="social">
+            <a href="/auth/google"><button class="social-button" id="google-btn"><img src="google.png" alt="Google" ></button></a>
+            <a href="/auth/twitter"><button class="social-button" id ="-btn"><img src="x.png" alt="X"></button></a>
+            <a href="/auth/facebook"><button class="social-button" id ="meta-btn"><img src="meta.png" alt="Facebook"></button></a>
+          </div>
+     </div>
+    <div id="picture">
+      <img src="pic.svg" alt="Login Image">
+    </div>
+    <script src="frontlogin.js"></script>
+  
+</body>
+</html>
