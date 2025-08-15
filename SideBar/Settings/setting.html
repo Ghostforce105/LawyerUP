@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <link href="../sidebar.css" rel="stylesheet" />
+    <link href="setting.css" rel="stylesheet" />
+    
+</head>
+<body>
+     <img src="1.png" alt="flower" class="image-back2"/>
+     <div class="top">
+    <div class="logo-area">
+      <img src="hammer.png" alt="Logo" class="Image"/>
+      <span class="logo-text">LawyerUP</span>
+    </div>
+  </div>
+     <!--SIDE BAR-->
+        <div id="SIDE">
+        <form id="form">
+          <div class="profile-header">
+            <div class="frame" id="initials">P</div>
+          </div>
+
+          <div class="top-links">
+            <a href="../Dashboard/dashboard.html" class="options" target="_self">
+              <img src="../icons8-dashboard-layout-48.png" class="icons" />
+            </a>
+            <a href="../AI-page/ai-page.html" class="options" target="_self">
+              <img src="../icons8-ai-48.png" class="icons" />
+            </a>
+            <a href="../book-lawyer/booklawyer.html" class="options">
+              <img src="../icons8-hiring-48.png" class="icons" />
+            </a>
+          </div>
+
+          <div class="bottom-links">
+            <a href="../profile/profile.html" class="options">
+              <img src="../icons8-profile-48.png" class="icons" />
+            </a>
+            <a href="setting.html" class="options active">
+              <img src="../icons8-settings-48.png" class="icons" />
+            </a>
+          </div>
+        </form>
+      </div>
+      <script>
+
+      document.querySelectorAll('.options').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.options').forEach(el => el.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    </script>
+    <!----------------------------------------------------------------------------------------------------->
+      <div class="container">
+        <div class="settings-container">
+            <!-- Security Settings Card -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <h2 class="card-title">Security</h2>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Change Password</span>
+                        <button class="btn btn-secondary" onclick="openModal('password-modal')">Change</button>
+                    </div>
+                    <p class="setting-description">Update your account password for better security</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Update Email</span>
+                        <button class="btn btn-secondary" onclick="openModal('email-modal')">Change</button>
+                    </div>
+                    <p class="setting-description">Change the email associated with your account</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Two-Factor Authentication</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="setting-description">Add an extra layer of security to your account</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Login Activity</span>
+                        <button class="btn btn-secondary">View</button>
+                    </div>
+                    <p class="setting-description">Review recent login attempts to your account</p>
+                </div>
+            </div>
+            
+            <!-- Permissions Settings Card -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 15l8-8-8-8-8 8h16z"></path>
+                        <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"></path>
+                    </svg>
+                    <h2 class="card-title">Permissions</h2>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Location Access</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="setting-description">Allow us to access your location for nearby lawyers</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Microphone Access</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="setting-description">Required for voice calls and dictation features</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Camera Access</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="setting-description">Required for video consultations and document scanning</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Notifications</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p class="setting-description">Receive case updates and appointment reminders</p>
+                </div>
+            </div>
+            
+            <!-- General Settings Card -->
+            <div class="settings-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <h2 class="card-title">General</h2>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Practice Areas</span>
+                        <button class="btn btn-secondary">Edit</button>
+                    </div>
+                    <p class="setting-description">Update your listed legal practice specialties</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Availability</span>
+                        <button class="btn btn-secondary">Set Schedule</button>
+                    </div>
+                    <p class="setting-description">Define your working hours for consultations</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">Billing Information</span>
+                        <button class="btn btn-secondary">Update</button>
+                    </div>
+                    <p class="setting-description">Edit your hourly rates and payment methods</p>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span class="setting-name">LOG OUT</span>
+                        <button class="btn btn-secondary">Logout</button>
+                    </div>
+                    <p class="setting-description">Don't forget this step</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Change Password</h3>
+                <button class="close-btn" onclick="closeModal('password-modal')">&times;</button>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Current Password</label>
+                <input type="password" class="input-field" placeholder="Enter current password">
+            </div>
+            <div class="input-group">
+                <label class="input-label">New Password</label>
+                <input type="password" class="input-field" placeholder="Enter new password">
+            </div>
+            <div class="input-group">
+                <label class="input-label">Confirm New Password</label>
+                <input type="password" class="input-field" placeholder="Confirm new password">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('password-modal')">Cancel</button>
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Email Modal -->
+    <div id="email-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Change Email Address</h3>
+                <button class="close-btn" onclick="closeModal('email-modal')">&times;</button>
+            </div>
+            <div class="input-group">
+                <label class="input-label">Current Email</label>
+                <input type="email" class="input-field" value="john.attorney@example.com" disabled>
+            </div>
+            <div class="input-group">
+                <label class="input-label">New Email</label>
+                <input type="email" class="input-field" placeholder="Enter new email address">
+            </div>
+            <div class="input-group">
+                <label class="input-label">Confirm New Email</label>
+                <input type="email" class="input-field" placeholder="Confirm new email address">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('email-modal')">Cancel</button>
+                <button class="btn btn-primary">Update Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "flex";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+
+        const toggleSwitches = document.querySelectorAll('.toggle-switch input');
+        toggleSwitches.forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const parent = this.closest('.setting-item');
+                if (this.checked) {
+                    parent.style.backgroundColor = '#e9ecef';
+                } else {
+                    parent.style.backgroundColor = '#f8f9fa';
+                }
+            });
+        });
+
+
+        function showToast(message) {
+            alert(message); 
+        }
+    </script>
+  
+    
+</body>
+</html>
+
