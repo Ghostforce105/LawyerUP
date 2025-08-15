@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "stylesheet" href="dress.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="transition-container">
+        <div class="coat">
+            <h1>LawyerUP</h1>
+            <p>Hover to reveal</p>
+        </div>
+        <div class="tie"></div>
+    </div>
+    <div id="box" class="fade-out"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.transition-container');
+        const coat = document.querySelector('.coat');
+        const box = document.getElementById('box');
+        setTimeout(() => {
+            coat.classList.add('active');
+        }, 300);
+
+        container.addEventListener('mouseenter', activateTransition);
+        container.addEventListener('click', activateTransition);
+
+        function activateTransition() {
+            container.classList.add('active');
+            box.classList.add('hide'); 
+            box.addEventListener('transitionend', () => {
+                window.location.href = '../Log_in/login.html';
+            });
+
+            container.removeEventListener('mouseenter', activateTransition);
+            container.removeEventListener('click', activateTransition);
+            
+        }
+    });
+</script>
+
+
+</body>
+</html>
+
