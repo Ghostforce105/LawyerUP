@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../sidebar.css" rel="stylesheet" />
+    <link href="booklawyer.css" rel="stylesheet" />
+    <title>Book Lawyer</title>
+</head>
+<body>   
+        <img src="1.png" alt="flower" class="image-back2"/>
+        <div class="top">
+            <div class="logo-area">
+            <img src="hammer.png" alt="Logo" class="Image"/>
+            <span class="logo-text">LawyerUP</span>
+            </div>
+        </div>
+        <!--SIDE BAR-->
+        <div id="SIDE">
+        <form id="form">
+          <div class="profile-header">
+            <div class="frame" id="initials">P</div>
+          </div>
+
+          <div class="top-links">
+            <a href="../Dashboard/dashboard.html" class="options" target="_self">
+              <img src="../icons8-dashboard-layout-48.png" class="icons" />
+            </a>
+            <a href="../AI-page/ai-page.html" class="options" target="_self">
+              <img src="../icons8-ai-48.png" class="icons" />
+            </a>
+            <a href="booklawyer.html" class="options active">
+              <img src="../icons8-hiring-48.png" class="icons" />
+            </a>
+          </div>
+
+          <div class="bottom-links">
+            <a href="../profile/profile.html" class="options">
+              <img src="../icons8-profile-48.png" class="icons" />
+            </a>
+            <a href="../setting/setting.html" class="options">
+              <img src="../icons8-settings-48.png" class="icons" />
+            </a>
+          </div>
+        </form>
+      </div>
+      <script>
+
+      document.querySelectorAll('.options').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.options').forEach(el => el.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    </script>
+    
+    <div class="container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for lawyers...">
+                <button class="filter-button">Filter by Location</button>
+                <button class="filter-button">Filter by Price</button>
+            </div>
+        </header>
+
+        <div class="lawyer-list">
+            <div class="lawyer-card" id = "1">
+                <img src="bg.jpg" alt="Lawyer Photo" class="lawyer-photo">
+                <h3 class="lawyer-name">John Doe</h3>
+                <p class="lawyer-info">Location: New York, NY</p>
+                <p class="lawyer-info">Phone: (123) 456-7890</p>
+                <p class="lawyer-info">Email: john.doe@example.com</p>
+                <p class="lawyer-info">Address: 123 Main St, New York, NY 10001</p>
+                <p class="lawyer-price">Price: $250/hour</p>
+                <button class="view-button">View</button>
+            </div>
+
+
+            <div class="lawyer-card" id ="2">
+                <img src="bg2.jpg" alt="Lawyer Photo" class="lawyer-photo">
+                <h3 class="lawyer-name">Jane Smith</h3>
+                <p class="lawyer-info">Location: Los Angeles, CA</p>
+                <p class="lawyer-info">Phone: (987) 654-3210</p>
+                <p class="lawyer-info">Email: jane.smith@example.com</p>
+                <p class="lawyer-info">Address: 456 Elm St, Los Angeles, CA 90001</p>
+                <p class="lawyer-price">Price: $250/hour</p>
+                <button class="view-button">View</button>
+            </div>
+
+
+            <div class="lawyer-card" id = "3">
+                <img src="bg3.jpg" alt="Lawyer Photo" class="lawyer-photo">
+                <h3 class="lawyer-name">Emily Johnson</h3>
+                <p class="lawyer-info">Location: Chicago, IL</p>
+                <p class="lawyer-info">Phone: (555) 123-4567</p>
+                <p class="lawyer-info">Email: emily.johnson@example.com</p>
+                <p class="lawyer-info">Address: 789 Oak St, Chicago, IL 60601</p>
+                <p class="lawyer-price">Price: $250/hour</p>
+                <button class="view-button">View</button>
+            </div>
+
+
+            <div class="lawyer-card" id ="4">
+                <img src="bg4.jpg" alt="Lawyer Photo" class="lawyer-photo">
+                <h3 class="lawyer-name">Michael Brown</h3>
+                <p class="lawyer-info">Location: Houston, TX</p>
+                <p class="lawyer-info">Phone: (321) 654-9870</p>
+                <p class="lawyer-info">Email: michael.brown@example.com</p>
+                <p class="lawyer-info">Address: 321 Pine St, Houston, TX 77001</p>
+                <p class="lawyer-price">Price: $250/hour</p>
+                <button class="view-button">View</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,226 @@
+body {
+    background: radial-gradient(ellipse at center, #fffdd0, #fef7c0, #fefef1);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+@media (max-width:480px) {
+    body {
+    background: radial-gradient(ellipse at center, #fffdd0, #fef7c0, #fefef1);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: top;
+    align-items: top;
+    flex-direction: column;
+    overflow: scroll;
+  }
+}
+
+.image-back2 {
+  position: fixed;
+  bottom:-40px;
+  left: 50px;
+  z-index: -1;
+  height: 1200px;
+  width: 1200px;
+}
+
+
+.top{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e1e2f;
+}
+
+.Image{
+    width: 40px;
+    height: 40px;
+}
+
+@media(max-width:720px){
+   .Image{
+    width: 0px;
+    height: 0px;
+   }
+  .logo-text {
+  font-size: 0px;
+  }
+}
+
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --text-color: #1e1e2f;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.filter-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.filter-button:hover {
+    background-color: #2a75e6;
+}
+
+.lawyer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.lawyer-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.lawyer-photo {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.lawyer-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.lawyer-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.lawyer-price {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.view-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #2a75e6;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-input {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .filter-button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .lawyer-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .lawyer-card {
+        padding: 15px;
+    }
+}
