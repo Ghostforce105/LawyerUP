@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="sidebar.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar</title>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="menu" id="menu">
+    <a href="#" class="options mobile active">
+      <img src="icons8-ai-48.png" class="icons" />
+      <span>Dashboard</span>
+    </a>
+    <a href="#" class="options mobile">
+      <img src="icons8-ai-48.png" class="icons" />
+      <span>AI</span>
+    </a>
+    <a href="#" class="options mobile">
+      <img src="icons8-hiring-48.png" class="icons" />
+      <span>Hire</span>
+    </a>
+    <a href="#" class="options mobile">
+      <img src="icons8-profile-48.png" class="icons" />
+      <span style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;">Profile</span>
+    </a>
+    <a href="#" class="options mobile">
+      <img src="icons8-settings-48.png" class="icons" />
+      <span>Settings</span>
+    </a>
+  </div>
+
+  <div id="SIDE">
+    <form id="form">
+      <div class="profile-header">
+        <div class="frame" id="initials">P</div>
+      </div>
+
+      <div class="top-links">
+        <a href="#" class="options active">
+          <img src="icons8-dashboard-layout-48.png" class="icons" />
+        </a>
+        
+        <a href="#" class="options">
+          <img src="icons8-ai-48.png" class="icons" />
+        </a>
+        <a href="#" class="options">
+          <img src="icons8-hiring-48.png" class="icons" />
+        </a>
+      </div>
+
+      <div class="bottom-links">
+        <a href="#" class="options">
+          <img src="icons8-profile-48.png" class="icons" />
+        </a>
+        <a href="#" class="options">
+          <img src="icons8-settings-48.png" class="icons" />
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.options').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.options').forEach(el => el.classList.remove('active'));
+        link.classList.add('active');
+        
+
+        if (window.innerWidth <= 480) {
+          menu.classList.remove('active');
+          hamburger.classList.remove('open');
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 480) {
+        menu.classList.remove('active');
+        hamburger.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
