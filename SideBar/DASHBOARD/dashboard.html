@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../sidebar.css" rel="stylesheet" />
+    <link href="dashboard.css" rel="stylesheet" />
+    <title>DASHBOARD</title>
+</head>
+<body>
+    <img src="1.png" alt="flower" class="image-back1"/>
+    <img src="1.png" alt="flower" class="image-back2"/>
+    <!--SIDE BAR-->
+        <div id="SIDE">
+        <form id="form">
+          <div class="profile-header">
+            <div class="frame" id="initials">P</div>
+          </div>
+
+          <div class="top-links">
+            <a href="dashboard.html" class="options active" target="_self">
+              <img src="../icons8-dashboard-layout-48.png" class="icons" />
+            </a>
+            <a href="../AI-page/ai-page.html" class="options" target="_self">
+              <img src="../icons8-ai-48.png" class="icons" />
+            </a>
+            <a href="../book-lawyer/booklawyer.html" class="options">
+              <img src="../icons8-hiring-48.png" class="icons" />
+            </a>
+          </div>
+
+          <div class="bottom-links">
+            <a href="../profile/profile.html" class="options">
+              <img src="../icons8-profile-48.png" class="icons" />
+            </a>
+            <a href="../setting/setting.html" class="options">
+              <img src="../icons8-settings-48.png" class="icons" />
+            </a>
+          </div>
+        </form>
+      </div>
+      <script>
+
+      document.querySelectorAll('.options').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.options').forEach(el => el.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    </script>
+    <!--====================================================================-->
+    <div class="Achievements">
+        <div class = "sub-achievement">
+            <img src="icons8-lawyer-50.png" alt="lawyer" class="image"/>
+            <p class = "numbers">1200</p>
+            <p class = "name">Lawyers Registered</p>
+        </div>
+        <div class = "sub-achievement">
+            <img src="icons8-lawyer-80.png" alt="lawyer" class="image"/>
+            <p class = "numbers">1200</p>
+            <p class = "name">Lawyers Available in area</p>
+        </div>
+        <div class = "sub-achievement">
+            <img src="icons8-user-100.png" alt="lawyer" class="image" />
+            <p class = "numbers">1200</p>
+            <p class = "name">Customers Registered</p>
+        </div>
+        <div class = "sub-achievement">
+            <img src="icons8-male-user-50.png" alt="lawyer" class="image"/>
+            <p class = "numbers">1200</p>
+            <p class = "name">Premium Customers</p>
+        </div>
+    </div>
+
+    <!--====================================================================-->
+  <div class="news">
+  <div class="display">
+    <img src="news/hq720.jpg" class="display-img" alt="News Image">
+  </div>
+
+  <div class="bar-container">
+    <div class="bar-active" id = "0"></div>
+    <div class="bar" id = "1"></div>
+    <div class="bar" id="2"></div>
+    <div class="bar" id ="3"></div>
+  </div>
+</div>
+<script>
+  let links = ["news/hq720.jpg", "news/hq721.jpg", "news/hq722.jpg", "news/hq723.jpg"];
+  let num = 0;
+  function change_image(num, links) {
+    document.querySelector(".display-img").src = links[(num+1) % links.length];
+    document.getElementById(String(num % links.length)).className = "bar";
+    document.getElementById(String((num + 1) % links.length)).className = "bar-active";
+
+    return num + 1;
+  }
+  setInterval(() => {
+    num = change_image(num, links);
+  }, 5000);
+</script>
+<!--====================================================================-->
+  <div class="customers-rank">
+    <!-- Premium Section -->
+    <div class="rank-section">
+      <img src="icons8-male-user-50.png" alt="Premium" class="rank-img" />
+      <div class="info">
+        <h3 class="rank">Become Premium Member</h3>
+         <p class="rank-info">Unlock exclusive legal tools & support.</p>
+    </div>
+      <button class="arrow-btnleft" onclick="alert('Coming soon!')"><img src="arrow-right.png" class="img-arr-btn"></button>
+    </div>
+
+    <!-- Executive Section -->
+    <div class="rank-section">
+      <img src="icons8-user-100.png" alt="Executive" class="rank-img" />
+      <div class = "info">
+          <h3 class="rank">Become Executive Member</h3>
+          <p class="rank-info">Priority access, 1-on-1 legal advice & more.</p>
+      </div>
+      <button class="arrow-btnleft" onclick="alert('Coming soon!')"><img src="arrow-right.png" class="img-arr-btn"></button>
+    </div>
+  </div>
+<!--====================================================================-->
+  <div class="schedule-card">
+  <h2>Next Appointment</h2>
+  <div class="schedule">
+    <div class="schedule-info">
+      <p><strong>Lawyer:</strong> Jane Doe</p>
+      <p><strong>Address:</strong> 123 Legal Street, Lawtown</p>
+      <p><strong>Phone:</strong> 980317290</p>
+      <p><strong>Date:</strong> <span id="next-date">2025-08-03</span></p>
+      <p><strong>Time:</strong> 03:00 PM</p>
+    </div>
+
+    <div class="schedule-buttons">
+      <button class="icon-btn" title="Open Calendar" onclick="openCalendarAtDate()">
+        <img src="calendar.png" alt="Calendar Icon">
+      </button>
+
+      <input type="date" id="calendar-input" onchange="updateDate()" style="display:none;" />
+
+
+      <button class="icon-btn" onclick="openModal()" title="View History" id="time">
+        <img src="time-left.png" alt="History Icon">
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="historyModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h3 class="modal-heading">Previous Appointments</h3>
+    <ul>
+      <li>2025-07-20 - John Smith - 2 PM</li>
+      <li>2025-07-15 - Mary Lee - 4 PM</li>
+      <li>2025-07-10 - James Park - 11 AM</li>
+      <li>2025-07-04 - Linda Ray - 3 PM</li>
+      <li>2025-06-28 - David Kim - 1 PM</li>
+    </ul>
+  </div>
+</div>
+
+
+<script>
+  function updateDate() {
+    const selectedDate = document.getElementById("calendar-input").value;
+    if (selectedDate) {
+      document.getElementById("next-date").textContent = selectedDate;
+    }
+  }
+
+  function openModal() {
+    document.getElementById("historyModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("historyModal").classList.add("hidden");
+  }
+
+  function openCalendarAtDate() {
+  let da = document.getElementById("next-date").textContent;
+  let year = da.slice(0, 4);
+  let mon = da.slice(5, 7);
+
+  const url = `https://calendar.google.com/calendar/u/0/r/month/${year}/${mon}/01`;
+  window.open(url, "_blank");
+}
+
+</script>
+
+
+<!--====================================================================-->
+
+
+<div class="lawyer-options">
+  <!-- Lawyer AI Agent Section -->
+  <div class="option-card">
+    <a href="../AI-page/ai-page.html" target="_blank">
+      <img src="https://img.icons8.com/fluency/96/chatbot.png" alt="Lawyer Agent AI" class="option-img" />
+    </a>
+    <h3>Try Our Lawyer Agent</h3>
+    <p>
+      Meet your virtual legal assistant — available 24/7 to help with your legal questions. Whether you're dealing with contracts, need help understanding your rights, or are just looking for legal guidance before booking a real lawyer, our AI-powered agent can provide you with fast, reliable, and confidential advice in seconds. No appointments. No delays. Just clarity, instantly.
+    </p>
+  </div>
+
+  <!-- Lawyer Booking Section -->
+  <div class="option-card">
+    <a href="../book-lawyer/booklawyer.html" target="_blank">
+      <img src="https://img.icons8.com/fluency/96/reservation-2.png" alt="Lawyer Booking" class="option-img" />
+    </a>
+    <h3>Book a Lawyer</h3>
+    <p>
+      Need expert legal help? Browse our network of experienced and verified lawyers across multiple specialties including criminal law, family law, property disputes, and more. View lawyer profiles, read reviews, check availability, and book appointments — all in one place. It's the easiest and fastest way to connect with the right legal expert for your needs.
+    </p>
+  </div>
+</div>
+
+
+
+</body>
+</html>
