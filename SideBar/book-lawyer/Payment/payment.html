@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Detail - LawConnect</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <img src="../1.png" alt="flower" class="image-back2"/>
+     <div class="top">
+    <div class="logo-area">
+      <img src="../hammer.png" alt="Logo" class="Image"/>
+      <span class="logo-text">LawyerUP</span>
+    </div>
+  </div>
+    <div class="container">
+        <header class="header">
+            <img src="../bg2.jpg" alt="Lawyer Photo" class="lawyer-photo">
+            <div>
+                <h1 class="lawyer-name">John Doe</h1>
+                <p class="lawyer-info">Location: New York, NY</p>
+                <p class="lawyer-info">Phone: (123) 456-7890</p>
+                <p class="lawyer-info">Email: john.doe@example.com</p>
+                <p class="lawyer-info">Address: 123 Main St, New York, NY 10001</p>
+                <p class="lawyer-info">Price: $250/hour</p>
+                <button class="book-button" onclick="openModal()">Book Now</button>
+            </div>
+        </header>
+
+        <div class="about-section">
+            <h2 class="about-title">About the Lawyer</h2>
+            <p>Hello, I am rodre i will be in your care</p>
+            <p>Download Certificate: <a href="https://example.com/certificate.pdf" download>Download</a></p>
+        </div>
+
+        <div id="booking-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Booking Information</h3>
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Phone Number</label>
+                    <input type="text" id="phone" class="input-field" placeholder="Enter your phone number">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Address</label>
+                    <input type="text" id="address" class="input-field" placeholder="Enter your address">
+                </div>
+                <button class="book-button" onclick="showSchedule()">Submit</button>
+            </div>
+        </div>
+
+        <div id="schedule" class="schedule" style="display: none;">
+            <h2 class="schedule-title">Available Schedule</h2>
+            <label class="schedule-item">
+                <input type="radio" name="time-slot" value="mon-10">
+                <span>Monday, 10 AM - 11 AM</span>
+            </label>
+            <label class="schedule-item">
+                <input type="radio" name="time-slot" value="wed-14">
+                <span>Wednesday, 2 PM - 3 PM</span>
+            </label>
+            <label class="schedule-item">
+                <input type="radio" name="time-slot" value="fri-13">
+                <span>Friday, 1 PM - 2 PM</span>
+            </label>
+            <button class="payment-button" onclick="showReceipt()">Confirm Booking</button>
+        </div>
+
+        <div id="receipt" class="receipt" style="display: none;">
+            <h2 class="receipt-title">Receipt</h2>
+            <p class="receipt-info">Lawyer: John Doe</p>
+            <p class="receipt-info">Price: $250/hour</p>
+            <p class="receipt-info">Phone: <span id="user-phone"></span></p>
+            <p class="receipt-info">Address: <span id="user-address"></span></p>
+            <p class="receipt-info">Timeslot: <span id="selected-slot"></span></p>
+            <button class="payment-button" onclick="processPayment()">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('booking-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('booking-modal').style.display = 'none';
+        }
+
+        function showSchedule() {
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            if (!phone || !address) {
+                alert('Please enter both phone number and address.');
+                return;
+            }
+
+            document.getElementById('user-phone').innerText = phone;
+            document.getElementById('user-address').innerText = address;
+
+            document.getElementById('booking-modal').style.display = 'none';
+            document.getElementById('schedule').style.display = 'block';
+        }
+
+        function showReceipt() {
+            const selectedSlot = document.querySelector('input[name="time-slot"]:checked');
+            if (!selectedSlot) {
+                alert('Please select a time slot');
+                return;
+            }
+            
+            document.getElementById('schedule').style.display = 'none';
+            document.getElementById('receipt').style.display = 'block';
+            document.getElementById('selected-slot').textContent = selectedSlot.value;
+        }
+
+        function processPayment() {
+            alert('Redirecting to payment portal...');
+        }
+    </script>
+</body>
+</html>
