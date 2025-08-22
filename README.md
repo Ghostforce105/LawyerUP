@@ -1,62 +1,69 @@
-# LawyerUP
-# Project Description:
+# ⚖️ LawyerUP – AI-Powered Legal Assistant  
 
-This project is a full-stack web application that enables users to book appointments with lawyers, chat with an AI legal assistant, and manage consultations efficiently. The platform integrates a fine-tuned LLaMA 2 model to provide intelligent responses to client queries, simulating a professional legal assistant for preliminary advice and case triage.
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)  
+![Tech Stack](https://img.shields.io/badge/Tech%20Stack-JS%20%7C%20Node.js%20%7C%20SQL-blue?style=for-the-badge)  
+![AI Model](https://img.shields.io/badge/AI-LLaMA%202%20(LoRA)-purple?style=for-the-badge)  
 
-The system allows users to:
+---
 
-Browse and book lawyers based on specialization, availability, and ratings.
+## 📌 Project Description  
 
-Chat with an AI Legal Assistant fine-tuned on legal datasets for FAQs, case queries, and initial consultations.
+**LawyerUP** is a **full-stack web application** that simplifies the process of booking lawyers and provides **AI-powered legal consultations**. The platform enables users to:  
 
-Make secure payments and schedule appointments online.
+- **Browse and book lawyers** by specialization, availability, and ratings.  
+- **Chat with an AI legal assistant** (powered by a fine-tuned **LLaMA 2** model).  
+- **Make secure payments** and schedule appointments online.  
 
-# Key Features:
+The AI chatbot acts as a **virtual legal advisor** for FAQs and preliminary case analysis, reducing initial lawyer workload.  
 
-Responsive Lawyer Booking Website
+---
 
-Built with js (frontend) and Node.js (backend).
+## ✨ Key Features  
 
-Integrated payment gateway for online booking.
+✔ **Responsive Lawyer Booking Platform**  
+- Search and book lawyers by specialization.  
+- Integrated **secure payment gateway**.  
 
-AI-Powered Chatbot
+✔ **AI-Powered Legal Assistant**  
+- Built using **LLaMA 2 fine-tuned for legal domain** (contracts, property, corporate law).  
+- Deployed via **FastAPI and Hugging Face Transformers**.  
 
-Uses LLaMA 2.0 fine-tuned for legal domain (contracts, property law, corporate law, etc.).
+✔ **User Authentication & Profiles**  
+- Secure **JWT-based login** system.  
+- Users can view **past chats** and **appointments**.  
 
-Hosted on a server with Hugging Face transformers
+✔ **Lawyer Dashboard**  
+- Lawyers manage **availability**, **appointments**, and **chat history**.  
 
-User Authentication & Profiles
+---
 
-JWT-based authentication for secure login.
+## 🛠 Tech Stack  
 
-Users can view past chats and booked appointments.
+| Component         | Technology                                |
+|-------------------|-------------------------------------------|
+| **Frontend**      | JavaScript, Vanilla CSS                  |
+| **Backend**       | Node.js                                  |
+| **AI Model**      | LLaMA 2 (fine-tuned using LoRA)          |
+| **Database**      | SQL                                      |
+| **AI Inference**  | PyTorch, Hugging Face, FastAPI           |
 
-Lawyer Dashboard
+---
 
-Lawyers can manage appointments, availability, and chat history.
+## 🗄 Database Overview  
 
-# Database:
+- **Users Table** → Authentication and user details.  
+- **Lawyers Table** → Specialization, ratings, availability.  
+- **Appointments Table** → Booking and scheduling info.  
+- **Chats Table** → AI conversation history.  
 
-SQL for user and booking data.
+---
 
-# Tech Stack:
+## 🔄 Workflow  
 
-Frontend: js, Vanilla CSS
-
-Backend: Node.js 
-
-AI Model: LLaMA 2.0 (fine-tuned using LoRA)
-
-Database: SQL
-
-Integration: PyTorch, Hugging Face, FastAPI for AI inference
-
-# Workflow:
-
-User visits website → Browses lawyers → Books appointment.
-
-AI Legal Agent → Answers queries using fine-tuned LLaMA 2 model.
-
-Backend handles scheduling, payments, and AI API calls.
-
-Lawyer Dashboard → Manages availability and client chats.
+```mermaid
+flowchart LR
+A[User Visits Website] --> B[Browse Lawyers]
+B --> C[Book Appointment & Make Payment]
+C --> D[AI Legal Assistant Chat]
+D --> E[Backend Handles Scheduling & AI API Calls]
+E --> F[Lawyer Dashboard for Management]
